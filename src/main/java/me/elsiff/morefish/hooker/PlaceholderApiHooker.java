@@ -54,7 +54,7 @@ public final class PlaceholderApiHooker implements PluginHooker {
 
         @Override
         public String getAuthor() {
-            return "Musician101";
+            return "Jaxii";
         }
 
         @Override
@@ -70,9 +70,9 @@ public final class PlaceholderApiHooker implements PluginHooker {
                     return Bukkit.getOfflinePlayer(competition.recordOf(number).getFisher()).getName();
                 }
 
-                return "no one";
+                return "No player is this rank";
             }
-            else if (identifier.startsWith("top_fish_length_")) {
+            if (identifier.startsWith("top_fish_length_")) {
                 int number = Integer.parseInt(identifier.replace("top_fish_length_", ""));
                 if (competition.getRanking().size() >= number) {
                     return String.valueOf(competition.recordOf(number).getFish().getLength());
@@ -80,15 +80,15 @@ public final class PlaceholderApiHooker implements PluginHooker {
 
                 return "0.0";
             }
-            else if (identifier.startsWith("top_fish_")) {
+            if (identifier.startsWith("top_fish_")) {
                 int number = Integer.parseInt(identifier.replace("top_fish_", ""));
                 if (competition.getRanking().size() >= number) {
                     return competition.recordOf(number).getFish().getType().getName();
                 }
 
-                return "none";
+                return "No top fish";
             }
-            else if (player != null) {
+            if (player != null) {
                 if (identifier.equals("rank")) {
                     if (competition.containsContestant(player.getUniqueId())) {
                         Record record = competition.recordOf(player.getUniqueId());
@@ -97,12 +97,12 @@ public final class PlaceholderApiHooker implements PluginHooker {
 
                     return "0";
                 }
-                else if (identifier.equals("fish")) {
+                if (identifier.equals("fish")) {
                     if (competition.containsContestant(player.getUniqueId())) {
                         return competition.recordOf(player.getUniqueId()).getFish().getType().getName();
                     }
 
-                    return "none";
+                    return "No value";
                 }
             }
 

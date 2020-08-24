@@ -132,6 +132,7 @@ public final class MainCommand implements TabExecutor {
                 case "clear":
                     clear(sender);
                     break;
+
                 case "end":
                     end(sender);
                     break;

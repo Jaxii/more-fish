@@ -103,6 +103,7 @@ public final class PlaceholderApiHooker implements PluginHooker {
                     }
 
                     return "No value";
+
                 }
             }
 

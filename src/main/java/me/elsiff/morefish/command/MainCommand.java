@@ -34,7 +34,7 @@ public final class MainCommand implements TabExecutor {
     }
 
     private void begin(@Nonnull CommandSender sender, @Nonnull String[] args) {
-        if (sender.hasPermission("morefish.admin")) {
+        if (!sender.hasPermission("morefish.admin")) {
             sender.sendMessage(Lang.INSTANCE.text("no-permission"));
             return;
         }
@@ -72,7 +72,7 @@ public final class MainCommand implements TabExecutor {
     }
 
     private void clear(@Nonnull CommandSender sender) {
-        if (sender.hasPermission("morefish.admin")) {
+        if (!sender.hasPermission("morefish.admin")) {
             sender.sendMessage(Lang.INSTANCE.text("no-permission"));
             return;
         }
@@ -82,7 +82,7 @@ public final class MainCommand implements TabExecutor {
     }
 
     private void end(@Nonnull CommandSender sender) {
-        if (sender.hasPermission("morefish.admin")) {
+        if (!sender.hasPermission("morefish.admin")) {
             sender.sendMessage(Lang.INSTANCE.text("no-permission"));
             return;
         }
@@ -100,7 +100,7 @@ public final class MainCommand implements TabExecutor {
     }
 
     private void help(@Nonnull CommandSender sender) {
-        if (sender.hasPermission("morefish.help")) {
+        if (!sender.hasPermission("morefish.help")) {
             sender.sendMessage(Lang.INSTANCE.text("no-permission"));
             return;
         }
@@ -170,7 +170,7 @@ public final class MainCommand implements TabExecutor {
     }
 
     private void reload(@Nonnull CommandSender sender) {
-        if (sender.hasPermission("morefish.admin")) {
+        if (!sender.hasPermission("morefish.admin")) {
             sender.sendMessage(Lang.INSTANCE.text("no-permission"));
             return;
         }
@@ -235,7 +235,7 @@ public final class MainCommand implements TabExecutor {
     }
 
     private void suspend(@Nonnull CommandSender sender) {
-        if (sender.hasPermission("morefish.admin")) {
+        if (!sender.hasPermission("morefish.admin")) {
             sender.sendMessage(Lang.INSTANCE.text("no-permission"));
             return;
         }
@@ -253,7 +253,7 @@ public final class MainCommand implements TabExecutor {
     }
 
     private void top(@Nonnull CommandSender sender) {
-        if (sender.hasPermission("morefish.top")) {
+        if (!sender.hasPermission("morefish.top")) {
             sender.sendMessage(Lang.INSTANCE.text("no-permission"));
             return;
         }
